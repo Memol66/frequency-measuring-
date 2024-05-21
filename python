@@ -1,14 +1,14 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Define the signal and FFT settings:
+# Define the signal and FFT settings
 Fs = 1000                        # Sampling frequency (Hz)
 t = np.arange(0, 1, 1/Fs)        # Time axis
 L = len(t)                       # Length of the signal
 f = 50                           # Signal frequency (Hz)
 x = np.sin(2 * np.pi * f * t)    # Generate the signal
 
-# Perform FFT:
+# Perform FFT
 Y = np.fft.fft(x)
 P2 = np.abs(Y / L)
 P1 = P2[0:L//2+1]
